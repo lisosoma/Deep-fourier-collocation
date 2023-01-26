@@ -14,9 +14,11 @@ Fourier Collocation method:
 $$
 	\partial_tu(t, x) = -\partial_{xx}u(t, x)- \partial_{xxxx}u(t, x)- u(t, x)\partial_xu(t, x), \ u(t, x_j) = \sum\limits_{k = N/2}^{N/2-1}\hat u_k(t)e^{ikx_j\frac{2}{L}},
 $$
+
 $$
 	\partial_t\left(\sum\limits_{k =- N/2}^{N/2-1}\hat u_k(t)e^{ikx_j\frac{2}{L}}\right) = - \partial_{xx} \left(\sum\limits_{k =- N/2}^{N/2-1}\hat u_k(t)e^{ikx_j\frac{2}{L}}\right) - \partial_{xxxx} \left(\sum\limits_{k =- N/2}^{N/2-1}\hat u_k(t)e^{ikx_j\frac{2}{L}}\right) -
 $$
+
 $$
 	- \partial_{x}\left(\sum\limits_{k = -N/2}^{N/2-1}\hat u_k(t)e^{ikx_j\frac{2}{L}}\right) \cdot \sum\limits_{k = -N/2}^{N/2-1}\hat u_k(t)e^{ikx_j\frac{2}{L}} = 
 $$
