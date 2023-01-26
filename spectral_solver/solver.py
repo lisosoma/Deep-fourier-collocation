@@ -3,16 +3,16 @@ import matplotlib.pyplot as plt
 
 class solver:
     def __init__(self, nu=1, L=35, N=100, t0=0, tN=300, dt=0.05):
-        self.nu = nu    # параметр, имеющий физический смысл в уравнении
-        self.L = L      # длина отрезка интегрирования по х
-        self.N = N      # количество узлов расчетной сетки
-        self.t0 = t0    # начальный момент времени
-        self.tN = tN    # конечный момент времени
-        self.dt = dt    # шаг по времени
-        self.k = np.arange(-self.N/2, self.N/2, 1) # коэффициенты k для вычисления операторов дифференцирования
+        self.nu = nu    
+        self.L = L      # length of interval
+        self.N = N      # number of grid points
+        self.t0 = t0    # start time mmoment
+        self.tN = tN    # end time moment
+        self.dt = dt    # time step
+        self.k = np.arange(-self.N/2, self.N/2, 1) 
         self.FL = ((((2 * np.pi) / self.L) * self.k) ** 2 
-                   - self.nu * (((2 * np.pi) / L) * self.k) ** 4 )  # оператор дифференцирования для линейной части
-        self.FN = -(1 / 2) * (1j) * ((2 * np.pi) / self.L) * self.k # оператор дифференцирования для нелинейной части
+                   - self.nu * (((2 * np.pi) / L) * self.k) ** 4 )  # linear differectiaction operator
+        self.FN = -(1 / 2) * (1j) * ((2 * np.pi) / self.L) * self.k # nonlinear differenciation operator
 
     def solve(self):
         # количество шагов по времени
@@ -47,15 +47,14 @@ class solver:
                 uhat_prev2 = u_hat2[:,0]
             else:
                 uhat_prev2 = u_hat2[:,i-1]
-            # схема Кранка-Николсона для линейной части и Адамса-Башфорта для нелинейной части
-            # таймстепинг в пространстве коэффициентов Фурье
+
             u_hat[:,i+1] = (1 / (1 - (self.dt / 2) * self.FL)) * ((1 + (self.dt / 2) * self.FL) * uhat_curr
                             + (((3 / 2) * self.FN) * (uhat_curr2) - ((1 / 2) * self.FN) * (uhat_prev2)) * self.dt)
-            # возврат в физическое пространство
+            # back to real space
             u[:,i+1] = np.real(self.N * np.fft.ifft(np.fft.ifftshift(u_hat[:,i+1])))
-            # корректировка коэффициента
+            # corretion of coefficient
             u_hat[:,i+1] = (1 / self.N) * np.fft.fftshift(np.fft.fft(u[:,i+1]))
-            # вычисление нелинейной части
+            # computing of nonlinear part
             u_hat2[:,i+1] = (1 / self.N) * np.fft.fftshift(np.fft.fft(u[:,i+1]**2))
 
         self.u = u
