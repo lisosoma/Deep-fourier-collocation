@@ -20,7 +20,7 @@ $$
 $$
 
 $$
-	- \partial_{x}\left(\sum\limits_{k = -N/2}^{N/2-1}\hat u_k(t)e^{ikx_j\frac{2}{L}}\right) \cdot \sum\limits_{k = -N/2}^{N/2-1}\hat u_k(t)e^{ikx_j\frac{2}{L}} = 
+	-\partial_{x}\left(\sum\limits_{k = -N/2}^{N/2-1}\hat u_k(t)e^{ikx_j\frac{2}{L}}\right) \cdot \sum\limits_{k = -N/2}^{N/2-1}\hat u_k(t)e^{ikx_j\frac{2}{L}} = 
 $$
 
 $$
