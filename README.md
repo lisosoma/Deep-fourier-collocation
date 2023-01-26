@@ -22,25 +22,32 @@ $$
 $$
 	- \partial_{x}\left(\sum\limits_{k = -N/2}^{N/2-1}\hat u_k(t)e^{ikx_j\frac{2}{L}}\right) \cdot \sum\limits_{k = -N/2}^{N/2-1}\hat u_k(t)e^{ikx_j\frac{2}{L}} = 
 $$
+
 $$
 	= \sum\limits_{k = N/2}^{N/2-1}k\left(\frac{2}{L} \right)^2\hat u_k(t)e^{ikx_j\frac{2}{L}} - \sum\limits_{k =- N/2}^{N/2-1}\left(\frac{2k}{L} \right)^4\hat u_k(t)e^{ikx_j\frac{2k}{L}} 
 	- 
 $$
+
 $$
 - i\sum\limits_{k =- N/2}^{N/2-1}\left(\frac{2k}{L} \right)\hat u_ke^{ikx_j\frac{2}{L}} \cdot \sum\limits_{k =- N/2}^{N/2-1}\hat u_k(t)e^{ikx_j\frac{2}{L}} =
 $$
+
 $$
 	= \sum\limits_{k =- N/2}^{N/2-1}\left(\frac{2}{L} \right)^2\hat u_k(t)e^{ikx_j\frac{2k}{L}} - \sum\limits_{k =- N/2}^{N/2-1}\left(\frac{2}{L} \right)^4\hat u_kk(t)e^{ikx_j\frac{2k}{L}} -
 $$
+
 $$
 	- i\left(\frac{2}{L} \right)\sum\limits_{p = -N/2}^{N/2}\sum\limits_{l = -N/2}^{N/2}\hat u_p(t)\hat u_l(t)e^{i(p+l)x_j\frac{2}{L}} = 
 $$
+
 $$
 	= \sum\limits_{k =- N/2}^{N/2-1}\left(\frac{2k}{L} \right)^2\hat u_k(t)e^{ikx_j\frac{2}{L}} - \sum\limits_{k =- N/2}^{N/2-1}\left(\frac{2k}{L} \right)^4\hat u_k(t)e^{ikx_j\frac{2}{L}} -
 $$
+
 $$
 	- i\left(\frac{2k}{L} \right) \sum\limits_{p+l=k}\hat u_p(t)\hat u_l(t)e^{i(p+l)x_j\frac{2}{L}}
 $$
+
 $$
 	\partial_t \hat u_k(t) = \left(\frac{2k}{L} \right)^2\hat u_k(t) - \left(\frac{2k}{L} \right)^4 \hat u_k(t) - \frac{1}{2}\cdot \frac{2ik}{L}\sum\limits_{l+p = k}\hat u_p(t) \hat u_l(t).
 $$
