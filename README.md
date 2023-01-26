@@ -50,3 +50,13 @@ $$
 $$
 	\partial_t \hat u_k(t) = \left(\frac{2k}{L} \right)^2\hat u_k(t) - \left(\frac{2k}{L} \right)^4 \hat u_k(t) - \frac{1}{2}\cdot \frac{2ik}{L}\sum\limits_{l+p = k}\hat u_p(t) \hat u_l(t).
 $$
+
+## Results of Under-resolved simulations
+
+![KS_20_AB_10pi_nu1](https://user-images.githubusercontent.com/60492990/214952806-d9c472fe-3808-4206-8b09-795e59c003da.png)
+
+![KS_50_AB_10pi_nu1](https://user-images.githubusercontent.com/60492990/214952928-b39ca89b-2a31-4d82-bb81-2030681098b0.png)
+
+![KS_100_AB_10pi_nu1](https://user-images.githubusercontent.com/60492990/214952954-079d4c43-cbcc-4a6e-b1cf-658fbaeaa973.png)
+
+
