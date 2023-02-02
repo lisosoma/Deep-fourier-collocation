@@ -15,27 +15,19 @@ class solver:
         self.FN = -(1 / 2) * (1j) * ((2 * np.pi) / self.L) * self.k # nonlinear differenciation operator
 
     def solve(self):
-        # количество шагов по времени
         nt = int((self.tN - self.t0) /self.dt) 
-
-        # сетка
         self.t = np.linspace(start=self.t0, stop=self.tN, num=nt)
         self.x = np.linspace(start=0, stop=self.L, num=self.N) 
 
-        # начальные условия
         self.u0 = -np.cos((2 * np.pi * self.x) / self.L) + np.sin((4 * np.pi * self.x) / self.L)
 
-        # коэффициенты пространства Фурье
         u0_hat = (1 / self.N) * np.fft.fftshift(np.fft.fft(self.u0))
-        # отдельно для нелинейной части
         u0_hat2 = (1 / self.N) * np.fft.fftshift(np.fft.fft(self.u0**2))
 
-        # массивы с решениями
         u = np.zeros((self.N, nt))
         u_hat = np.zeros((self.N, nt), dtype=complex)
         u_hat2 = np.zeros((self.N, nt), dtype=complex)
 
-        # инициализация массивов
         u[:,0] = self.u0
         u_hat[:,0] = u0_hat
         u_hat2[:,0] = u0_hat2
